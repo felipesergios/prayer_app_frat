@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,6 +7,11 @@ class HomePage extends StatelessWidget {
     {'title': 'Pelo Clero', 'route': '/prayerling/peloclero', 'initialAssetPath': 'markdown/oracao002.md', 'icon': Icons.church_rounded},
     {'title': 'Pelas Almas', 'route': '/prayerling/pelasalmas', 'initialAssetPath': 'markdown/oracao003.md', 'icon': Icons.people_alt},
     {'title': 'Das Virtudes', 'route': '/prayerling/dasvirtudes', 'initialAssetPath': 'markdown/oracao004.md', 'icon': Icons.account_balance},
+    {'title': 'Suplica Diária', 'route': '/prayerling/suplicadiaria', 'initialAssetPath': 'markdown/oracao005.md', 'icon': CupertinoIcons.hand_raised},
+    {'title': 'A Mária', 'route': '/prayerling/amaria', 'initialAssetPath': 'markdown/oracao006.md', 'icon': Icons.church_outlined}, 
+    {'title': 'Da Noite', 'route': '/prayerling/danoite', 'initialAssetPath': 'markdown/oracao007.md', 'icon': CupertinoIcons.moon_circle},
+    {'title': 'Rosário Monfortino', 'route': '/prayerling/rosariomonfort', 'initialAssetPath': 'markdown/oracao008.md', 'icon': CupertinoIcons.book_circle},
+    {'title': 'Exame de consciência', 'route': '/prayerling/exame', 'initialAssetPath': 'markdown/oracao009.md', 'icon': CupertinoIcons.bubble_left},
     // Adicione mais itens aqui conforme necessário
   ];
 

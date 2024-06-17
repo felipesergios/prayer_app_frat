@@ -18,6 +18,11 @@ class MyApp extends StatelessWidget {
         '/prayerling/peloclero': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao002.md',),
         '/prayerling/pelasalmas': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao003.md',),
         '/prayerling/dasvirtudes': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao004.md',),
+        '/prayerling/suplicadiaria': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao005.md',),
+        '/prayerling/amaria': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao006.md',),
+        '/prayerling/danoite': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao007.md',),
+        '/prayerling/rosariomonfort': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao008.md',),
+        '/prayerling/exame': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao009.md',),
       },
     );
   }
