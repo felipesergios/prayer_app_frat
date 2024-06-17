@@ -1,6 +1,7 @@
-# test_drive
+# Prayer Mobile Application 
 
-A new Flutter project.
+From Fraternity Disciples of mother of god 
+new brazilian catholic community
 
 ## Getting Started
 
