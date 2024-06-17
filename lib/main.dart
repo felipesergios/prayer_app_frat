@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
         '/favorites': (context) => FavoritesPage(),
         '/prayerling': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao001.md',),
         '/prayerling/peloclero': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao002.md',),
+        '/prayerling/pelasalmas': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao003.md',),
+        '/prayerling/dasvirtudes': (context) => PrayerlingPage(initialAssetPath: 'markdown/oracao004.md',),
       },
     );
   }

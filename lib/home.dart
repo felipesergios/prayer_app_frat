@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   final List<Map<String, dynamic>> items = [
-    {'title': 'Iniciais', 'route': '/prayerling', 'initialAssetPath': 'markdown/oracao001.md'},
-    {'title': 'Pelo Clero', 'route': '/prayerling/peloclero', 'initialAssetPath': 'markdown/oracao002.md'},
-    {'title': 'Pelas Almas', 'route': '/prayerling', 'initialAssetPath': 'markdown/oracao003.md'},
-    {'title': 'Das Virtudes', 'route': '/prayerling', 'initialAssetPath': 'markdown/oracao004.md'},
+    {'title': 'Iniciais', 'route': '/prayerling', 'initialAssetPath': 'markdown/oracao001.md', 'icon': Icons.access_alarm},
+    {'title': 'Pelo Clero', 'route': '/prayerling/peloclero', 'initialAssetPath': 'markdown/oracao002.md', 'icon': Icons.church_rounded},
+    {'title': 'Pelas Almas', 'route': '/prayerling/pelasalmas', 'initialAssetPath': 'markdown/oracao003.md', 'icon': Icons.people_alt},
+    {'title': 'Das Virtudes', 'route': '/prayerling/dasvirtudes', 'initialAssetPath': 'markdown/oracao004.md', 'icon': Icons.account_balance},
     // Adicione mais itens aqui conforme necessário
   ];
 
@@ -19,6 +19,7 @@ class HomePage extends StatelessWidget {
         itemCount: items.length,
         itemBuilder: (context, index) {
           return ListTile(
+            leading: Icon(items[index]['icon']), // Ícone à esquerda do título
             title: Text(items[index]['title']),
             onTap: () {
               Navigator.pushNamed(
