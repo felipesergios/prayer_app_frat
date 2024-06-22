@@ -4,11 +4,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SocialMedia extends StatelessWidget {
   // Função para abrir o URL usando o url_launcher
-  void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
+  void _launchURL(String urlString) async {
+    try {
+      if (await canLaunch(urlString)) {
+        await launch(urlString, forceWebView: false);
+      } else {
+        throw 'Could not launch $urlString';
+      }
+    } catch (e) {
+      print('Error launching URL: $e');
+      // Trate o erro conforme necessário
     }
   }
 
@@ -50,9 +55,9 @@ class SocialMedia extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: FaIcon(FontAwesomeIcons.globe, color: Colors.blueAccent),
+            icon: FaIcon(FontAwesomeIcons.globe, color: Colors.brown),
             onPressed: () {
-              _launchURL('https://www.discipulosdamaededeus.com.br/');
+              _launchURL('https://www.discipulosdamaededeus.com.br');
             },
           ),
         ],

@@ -6,6 +6,7 @@ import 'prayerling.dart';
 import 'MarkdownViewer.dart';
 import 'social.dart';
 import 'landing.dart';
+import 'socialmedia.dart';
 
 void main() => runApp(MyApp());
 
