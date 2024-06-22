@@ -67,8 +67,8 @@ class _StartComponentState extends State<StartComponent> with SingleTickerProvid
           labelColor: Colors.white,
           controller: _tabController,
           tabs: [
-            Tab(icon: Icon(FontAwesomeIcons.house), text: "Início"),
-            Tab(icon: Icon(FontAwesomeIcons.book), text: "Orações"),
+            Tab(icon: Icon(FontAwesomeIcons.house,), text: "Início"),
+            Tab(icon: Icon(FontAwesomeIcons.handsPraying), text: "Orações"),
             Tab(icon: Icon(FontAwesomeIcons.fileAudio), text: "Mídias"),
           ],
         ),
@@ -82,8 +82,8 @@ class _StartComponentState extends State<StartComponent> with SingleTickerProvid
                 Navigator.pushNamed(context, '/home');
               },
               child: MarkdownViewer(
-                    githubRepoUrl: 'raw.githubusercontent.com', // Exemplo de URL do GitHub
-                    markdownFilePath: '/felipesergios/Ansibleauto/main/Deployments/create_linux_vm/README.md', // Exemplo de caminho do arquivo Markdown
+                    githubRepoUrl: 'https://raw.githubusercontent.com/felipesergios/Ansibleauto/main/Deployments/create_linux_vm/',
+                    markdownFilePath: 'README.md', // Exemplo de caminho do arquivo Markdown
                   ),
             ),
           ),

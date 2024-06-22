@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_markdown/flutter_markdown.dart';
 
@@ -15,7 +14,7 @@ class MarkdownViewer extends StatefulWidget {
 
 class _MarkdownViewerState extends State<MarkdownViewer> {
   late Future<String> _markdownFuture;
-  late String _markdownContent;
+  String _markdownContent = '';
   bool _isLoading = true;
   bool _hasError = false;
 
@@ -27,7 +26,7 @@ class _MarkdownViewerState extends State<MarkdownViewer> {
 
   Future<void> _loadMarkdownContent() async {
     try {
-      final url = Uri.https(widget.githubRepoUrl, widget.markdownFilePath);
+      final url = Uri.parse('${widget.githubRepoUrl}/${widget.markdownFilePath}');
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
@@ -41,42 +40,28 @@ class _MarkdownViewerState extends State<MarkdownViewer> {
           _isLoading = false;
           _hasError = true;
         });
+        print('Failed to load Markdown file: ${response.statusCode}');
       }
     } catch (e) {
       setState(() {
         _isLoading = false;
         _hasError = true;
       });
+      print('Failed to load Markdown file: $e');
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoading) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Markdown Viewer'),
-        ),
-        body: Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
-    } else if (_hasError) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Markdown Viewer'),
-        ),
-        body: Center(
-          child: Text('Failed to load Markdown file'),
-        ),
-      );
-    } else {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Markdown Viewer'),
-        ),
-        body: Markdown(data: _markdownContent),
-      );
-    }
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Markdown Viewer'),
+      ),
+      body: _isLoading
+          ? Center(child: CircularProgressIndicator())
+          : _hasError
+              ? Center(child: Text('Failed to load Markdown file'))
+              : Markdown(data: _markdownContent),
+    );
   }
 }
