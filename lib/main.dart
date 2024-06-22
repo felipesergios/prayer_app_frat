@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'home.dart';
 import 'favorites.dart';
 import 'prayerling.dart';
+import 'MarkdownViewer.dart';
+import 'social.dart';
+import 'landing.dart';
 
 void main() => runApp(MyApp());
 
@@ -53,7 +57,7 @@ class _StartComponentState extends State<StartComponent> with SingleTickerProvid
     return Scaffold(
       appBar: AppBar(
         //backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        backgroundColor:Colors.brown,
+        backgroundColor:Colors.blueAccent,
         surfaceTintColor: Colors.white,
         foregroundColor: Colors.white,
         title: Text("Discípulos na oracão"),
@@ -62,9 +66,9 @@ class _StartComponentState extends State<StartComponent> with SingleTickerProvid
           labelColor: Colors.white,
           controller: _tabController,
           tabs: [
-            Tab(icon: Icon(Icons.home), text: "Home"),
-            Tab(icon: Icon(Icons.book), text: "Orações"),
-            Tab(icon: Icon(Icons.settings), text: "Settings"),
+            Tab(icon: Icon(FontAwesomeIcons.house), text: "Início"),
+            Tab(icon: Icon(FontAwesomeIcons.book), text: "Orações"),
+            Tab(icon: Icon(FontAwesomeIcons.fileAudio), text: "Mídias"),
           ],
         ),
       ),
@@ -76,7 +80,10 @@ class _StartComponentState extends State<StartComponent> with SingleTickerProvid
               onPressed: () {
                 Navigator.pushNamed(context, '/home');
               },
-              child: Text("Ir para Home"),
+              child: MarkdownViewer(
+                    githubRepoUrl: 'raw.githubusercontent.com', // Exemplo de URL do GitHub
+                    markdownFilePath: '/felipesergios/Ansibleauto/main/Deployments/create_linux_vm/README.md', // Exemplo de caminho do arquivo Markdown
+                  ),
             ),
           ),
           Center(
@@ -87,7 +94,7 @@ class _StartComponentState extends State<StartComponent> with SingleTickerProvid
               child: HomePage(),
             ),
           ),
-          Center(child: Text("Settings Page")),
+          Center(child: Landing()),
         ],
       ),
     );
