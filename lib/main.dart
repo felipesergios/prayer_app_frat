@@ -83,7 +83,8 @@ class _StartComponentState extends State<StartComponent> with SingleTickerProvid
               },
               child: MarkdownViewer(
                     githubRepoUrl: 'https://raw.githubusercontent.com/felipesergios/Ansibleauto/main/Deployments/create_linux_vm/',
-                    markdownFilePath: 'README.md', // Exemplo de caminho do arquivo Markdown
+                    markdownFilePath: 'README.md',
+                    HeaderName: 'Teste', // Exemplo de caminho do arquivo Markdown
                   ),
             ),
           ),

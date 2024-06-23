@@ -5,8 +5,10 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 class MarkdownViewer extends StatefulWidget {
   final String githubRepoUrl;
   final String markdownFilePath;
+  final String HeaderName;
 
-  MarkdownViewer({required this.githubRepoUrl, required this.markdownFilePath});
+
+  MarkdownViewer({required this.HeaderName,required this.githubRepoUrl, required this.markdownFilePath});
 
   @override
   _MarkdownViewerState createState() => _MarkdownViewerState();
@@ -55,7 +57,7 @@ class _MarkdownViewerState extends State<MarkdownViewer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Markdown Viewer'),
+        title: Text('${widget.HeaderName}'),
       ),
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
